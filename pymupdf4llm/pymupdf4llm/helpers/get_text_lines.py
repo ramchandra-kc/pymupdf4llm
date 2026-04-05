@@ -138,12 +138,12 @@ def get_raw_lines(
                     # ignore white text if not a Type3 font
                     continue
                 # Ignore invisible text. Type 3 font text is never invisible.
-                if (
-                    s["font"] != TYPE3_FONT_NAME
-                    and s["alpha"] == 0
-                    and ignore_invisible
-                ):
-                    continue
+                # if (
+                #     s["font"] != TYPE3_FONT_NAME
+                #     and s["alpha"] == 0
+                #     and ignore_invisible
+                # ):
+                #     continue
                 if not almost_in_bbox(s["bbox"], clip):  # if not in clip
                     continue
                 sbbox = pymupdf.Rect(s["bbox"])  # span bbox as a Rect
